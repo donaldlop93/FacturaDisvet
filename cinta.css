@@ -1,3 +1,4 @@
+
 /* Configuración global */
 body {
     margin: 0;
@@ -58,7 +59,7 @@ table.inventory {
     border-collapse: collapse;
     margin-bottom: 5mm;
     border-spacing: 0;
-    table-layout: auto; /* Ajuste dinámico del ancho de columnas */
+    table-layout: fixed; /* Controlar el ancho fijo de columnas */
 }
 
 table.inventory th, 
@@ -80,18 +81,28 @@ table.inventory td:first-child {
 }
 
 /* Ajustar anchos de columnas */
+table.inventory th:nth-child(1),
+table.inventory td:nth-child(1) {
+    width: 50%; /* Más espacio para la columna de Producto */
+    text-align: left;
+}
+
 table.inventory th:nth-child(2),
 table.inventory td:nth-child(2) {
+    width: 10%; /* Ancho fijo para Cantidad */
     text-align: center;
-    width: 10%; /* Ancho fijo para la columna Cantidad */
 }
 
 table.inventory th:nth-child(3),
-table.inventory td:nth-child(3),
+table.inventory td:nth-child(3) {
+    width: 20%; /* Ancho fijo para Precio Unitario */
+    text-align: right;
+}
+
 table.inventory th:nth-child(4),
 table.inventory td:nth-child(4) {
+    width: 20%; /* Ancho fijo para Total */
     text-align: right;
-    width: auto; /* Las columnas Precio Unitario y Total se ajustan dinámicamente */
 }
 
 /* Tabla de totales */
